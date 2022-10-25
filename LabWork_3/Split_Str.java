@@ -103,13 +103,22 @@ public class Split_Str {
 //        System.out.println(result);
         gapsDestribution();
     }
-    public ArrayList<String> getArrListStr() {
+    public String[][] getArrListStr() {
+
+        String[][] out = new String[rtrn.size()][split_lenght];
+        for (int i = 0; i < rtrn.size(); i++) {
+            for (int j = 0;j < split_lenght; j++) {
+                char[] line = rtrn.get(i).toCharArray();
+                out[i][j] = String.valueOf(line[j]);
+            }
+        }
         original_str = "";
         split_lenght = -1;
         maxLenghtWord = 0;
         wordBiggestLineSize = false;
         cut_word = false;
-        return rtrn;
+        return out;
+
     }
 
 
